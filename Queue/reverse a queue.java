@@ -1,4 +1,4 @@
-lass GfG {
+class Reverse {
     // Function to reverse the queue.
     public Queue<Integer> rev(Queue<Integer> q) {
         // add code here.
