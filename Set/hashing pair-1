@@ -1,0 +1,14 @@
+class Geeks {
+    public static int sumExists(int arr[], int sum) {
+        HashSet<Integer> s = new HashSet<>();
+        
+        for (int num : arr) {
+            if (s.contains(sum - num)) {
+                return 1;
+            }
+            s.add(num);
+        }
+        
+        return 0;
+    }
+}
