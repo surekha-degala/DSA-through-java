@@ -24,3 +24,36 @@ class Solution {
 
 }
 
+class Solution {
+
+    // GCD helper
+    long gcd(long a, long b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+
+    // LCM helper
+    long lcm(long a, long b) {
+        return (a * b) / gcd(a, b);
+    }
+
+    int lcmTriplets(int n) {
+        long maxLCM = 0;
+
+        // Try all combinations of (i, j, k)
+        for (int i = n; i >= 1; i--) {
+            for (int j = i; j >= 1; j--) {
+                for (int k = j; k >= 1; k--) {
+                    long currentLCM = lcm(i, lcm(j, k));
+                    if (currentLCM > maxLCM) {
+                        maxLCM = currentLCM;
+                    }
+                }
+            }
+        }
+
+        return (int) maxLCM;
+    }
+}
+
+
