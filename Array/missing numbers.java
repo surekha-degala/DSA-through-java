@@ -10,3 +10,14 @@ class Solution {
         return total - sum;
         }
     }
+import java.util.*;
+class Solution {
+    int missingNum(int arr[]) {
+        // code here
+        Arrays.sort(arr);
+        for(int i = 1; i<=arr.length;i++) {
+            if (i!= arr[i-1]) return i;
+        }
+        return arr.length+1;
+    }
+}
