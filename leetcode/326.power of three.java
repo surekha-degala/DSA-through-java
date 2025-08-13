@@ -8,3 +8,14 @@ class Solution {
         return n == 1;
     }
 }
+class Solution {
+    public boolean isPowerOfThree(int n ) {
+        if ( n <=0) return false;
+        for (int i =0; i<Math.sqrt(n);i++) {
+            if (Math.pow(i, 3) == n) {
+                return true;
+            }
+        }
+    return false;
+    }
+}
